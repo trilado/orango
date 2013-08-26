@@ -19,6 +19,11 @@ class Post extends Model
 	/**
 	 * @Column(Type="String")
 	 */
+	public $Img;
+	
+	/**
+	 * @Column(Type="String")
+	 */
 	public $Slug;
 	
 	/**
@@ -65,6 +70,19 @@ class Post extends Model
 	 * @Column(Type="Int")
 	 */
 	public $Order;
+
+	public function saveImage($path)
+	{
+		$canvas = new canvas();
+		$canvas->carrega($path);
+
+		$config = Config::get('image');
+		extract($config);
+		$this->Img = $path . md5(uniqid()) . '.png';
+
+		$canvas->redimensiona($w, $h, 'crop');
+		$canvas->grava(WWWROOT . $this->Img);
+	}
 	
 	/**
 	 * Retorna as categorias de um post.

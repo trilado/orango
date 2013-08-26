@@ -134,3 +134,9 @@ Config::set('html_safe_list', '<a><address><em><strong><b><i><big><small><sub><s
 Config::set('site_name', 'Orango CMS');
 
 Config::set('theme', 'default');
+
+Config::set('image', array(
+	'w' => 150,
+	'h' => 150,
+	'path' => 'media/'
+));

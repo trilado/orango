@@ -1,5 +1,5 @@
 <h1>Post <small><?= $label ?></small></h1>
-<form method="post" action="">
+<form id="post-form" method="post" action="" enctype='multipart/form-data'>
 	<div class="row-fluid">
 	<?= BForm::input('Título', 'Title', $model->Title, 'input-block-level', array('placeholder' => 'Digite o título aqui')) ?>
 	</div>
@@ -13,6 +13,13 @@
 					<option <?= array_search($c->Id, $selectedCategories) !== false ? 'selected="selected"' : '' ?> value="<?= $c->Id ?>"><?= $c->Name ?></option>
 					<?php endforeach; ?>
 				</select>
+			</div>
+		</div>
+		<div class="control-group span4">
+			<div class="controls">
+				<label class="control-label" for="Image">Imagem de Exibição</label>
+				<input class="btn btn-block" type="button" id="Image" value="Adicionar Imagem" />
+				<input type="file" name="Image" style="display: none;" />
 			</div>
 		</div>
 	</div>

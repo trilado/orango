@@ -95,6 +95,12 @@ class PostController extends AppController
 				$post->CreatedDate = time();
 				$post->Type = 'post';
 				$post->Slug = Inflector::slugify(Request::post('Title'));
+
+				$file = Request::file('Image');
+				if($file)
+				{
+					$post->saveImage($file['tmp_name']);
+				}
 				
 				if(Request::post('Draft'))
 				{
@@ -157,6 +163,12 @@ class PostController extends AppController
 				{
 					$post->PublicationDate = time();
 					$post->Status = 1;
+				}
+
+				$file = Request::file('Image');
+				if($file)
+				{
+					$post->saveImage($file['tmp_name']);
 				}
 				
 				$post->save();

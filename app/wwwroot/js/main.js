@@ -11,22 +11,6 @@ $(document).ready(function(){
 	
 	$('select[data-toggle="chosen-multiple"]').chosen();
 	
-	//Category add validation
-	$('#form-category').validate({
-		rules: {
-			Name: {
-				required: true,
-				minlength: 3
-			}
-		},
-		messages: {
-			Name: {
-				required: 'Você deve informar um nome para a categoria.',
-				minlength: 'O nome da categoria deve ter pelo menos 3 caractéres.'
-			}
-		}
-	});
-	
 	$('#form-post #btn-publish').click(function(e){
 		e.preventDefault();
 		var self = $(this);
@@ -44,6 +28,10 @@ $(document).ready(function(){
 			e.preventDefault();
 			$('#form-post #btn-search').click();
 		}
+	});
+
+	$('#post-form #Image').click(function(){
+		$(this).parent().find('input[type="file"]').click();
 	});
 	
 	// User add validation
@@ -77,6 +65,22 @@ $(document).ready(function(){
 		},
 		highlight: validateHighLight(),
 		success: validateSuccess()
+	});
+
+	//Category add validation
+	$('#form-category').validate({
+		rules: {
+			Name: {
+				required: true,
+				minlength: 3
+			}
+		},
+		messages: {
+			Name: {
+				required: 'Você deve informar um nome para a categoria.',
+				minlength: 'O nome da categoria deve ter pelo menos 3 caractéres.'
+			}
+		}
 	});
 
 	//Profile form
