@@ -1,5 +1,5 @@
 <h1>Página <small><?= $label ?></small></h1>
-<form method="post" action="">
+<form id="form-page" method="post" action="">
 	<?= BForm::input('Título', 'Title', $model->Title, 'input-block-level', array('placeholder' => 'Digite o título aqui')) ?>
 	<div class="row-fluid">
 		<div class="span10">

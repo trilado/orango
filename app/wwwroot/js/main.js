@@ -67,6 +67,38 @@ $(document).ready(function(){
 		success: validateSuccess()
 	});
 
+	//Form add Post validation
+	$('#post-form').validate({
+		rules: {
+			Title: {
+				required: true,
+				minlength: 3
+			}
+		},
+		messages: {
+			Title: {
+				required: 'Você deve informar um título para o post.',
+				minlength: 'O título do post deve ter pelo menos 3 caractéres.'
+			}
+		}
+	});
+
+	//Form add Post validation
+	$('#form-page').validate({
+		rules: {
+			Title: {
+				required: true,
+				minlength: 3
+			}
+		},
+		messages: {
+			Title: {
+				required: 'Você deve informar um título para a página.',
+				minlength: 'O título da página deve ter pelo menos 3 caractéres.'
+			}
+		}
+	});
+
 	//Category add validation
 	$('#form-category').validate({
 		rules: {
