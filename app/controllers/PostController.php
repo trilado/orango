@@ -97,7 +97,7 @@ class PostController extends AppController
 				$post->Slug = Inflector::slugify(Request::post('Title'));
 
 				$file = Request::file('Image');
-				if($file)
+				if($file['name'])
 				{
 					$post->saveImage($file['tmp_name']);
 				}
@@ -166,7 +166,7 @@ class PostController extends AppController
 				}
 
 				$file = Request::file('Image');
-				if($file)
+				if($file['name'])
 				{
 					$post->saveImage($file['tmp_name']);
 				}
