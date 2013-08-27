@@ -23,7 +23,8 @@
 			<thead>
 				<tr>
 					<th class="span1">&nbsp;</th>
-					<th class="span9">Título</th>
+					<th class="span7">Título</th>
+					<th class="span2">Slug</th>
 					<th class="span1">Ordem</th>
 					<th class="span1">Status</th>
 				</tr>
@@ -36,6 +37,7 @@
 							<td>
 								<a href="~/admin/page/edit/<?= $p->Id ?>"><?= $p->Title ?></a>
 							</td>
+							<td><?= $p->Slug ?></td>
 							<td><?= $p->Order ?></td>
 							<td><span class="badge <?= $p->Status ? 'badge-success' : '' ?>">&nbsp;</span></td>
 						</tr>

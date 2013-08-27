@@ -34,7 +34,8 @@
 			<thead>
 				<tr>
 					<th class="span1">&nbsp;</th>
-					<th class="span6">Título</th>
+					<th class="span4">Título</th>
+					<th class="span2">Slug</th>
 					<th class="span3">Autor</th>
 					<th class="span2">Data</th>
 					<th class="span1">Status</th>
@@ -48,6 +49,7 @@
 							<td>
 								<a href="~/admin/post/edit/<?= $p->Id ?>"><?= $p->Title ?></a>
 							</td>
+							<td><?= $p->Slug ?></td>
 							<td><?= $p->AuthorName ?></td>
 							<td><?= $p->PublicationDate ?></td>
 							<td><span class="badge <?= $p->Status ? 'badge-success' : '' ?>">&nbsp;</span></td>
