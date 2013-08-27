@@ -9,6 +9,8 @@ class ModuleComposer
 	const SIDE_MENU_ADDS	= 'SIDE_MENU_ADDS';
 	const NAV_BAR_ADDS		= 'NAV_BAR_ADDS';
 
+	public static $requestStack = array();
+
 	public static function getAdds($addType)
 	{
 		$modules = Config::get('modules');
@@ -37,8 +39,6 @@ class ModuleComposer
 				$params = '';
 				if(isset($clazz::$adds['params']))
 				{
-
-					$clazz::$adds['params'] = array_merge(App::$args['params'], $clazz::$adds['params']);
 					$params = implode('/', $clazz::$adds['params']);
 				}
 
@@ -52,7 +52,9 @@ class ModuleComposer
 					}
 				}
 				
+				array_unshift(self::$requestStack, App::$args);
 				$html .= Module::run('/' . $k . '/' . $controller . '/' . $action . '/' . $params . $query);
+				array_shift(self::$requestStack);
 			}
 		}
 
