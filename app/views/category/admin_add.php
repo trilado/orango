@@ -13,5 +13,6 @@
 			<input class="btn btn-inverse" type="submit" value="<?= $label ?>" />
 			<a href="~/admin/category" class="help-inline">Voltar</a>
 		</div>
+		<?= ModuleComposer::getAdds(ModuleComposer::CATEGORY_ADDS); ?>
 	</form>
 </div>

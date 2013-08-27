@@ -35,6 +35,7 @@
 					</div>
 				</div>
 			</div>
+			<?= ModuleComposer::getAdds(ModuleComposer::USER_ADDS); ?>
 			<div class="row-fluid">
 				<input type="submit" value="<?= $label ?>" class="btn btn-inverse" />
 				<a href="~/admin/user" class="help-inline">Voltar</a>

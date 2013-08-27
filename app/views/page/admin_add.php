@@ -25,6 +25,7 @@
 			<?= BForm::input('Ordem', 'Order', $model->Order) ?>
 		</div>
 	</div>
+	<?= ModuleComposer::getAdds(ModuleComposer::PAGE_ADDS); ?>
 	<?= BForm::textarea('Conteúdo', 'Content', $model->Content, 'input-block-level ckeditor') ?>
 	<?php if($label == 'Criar' || $model->Status === 0): ?>
 	<button type="submit" class="btn btn-inverse">Publicar</button>

@@ -48,6 +48,7 @@
 											<?php endif ?>
 										</ul>
 									</li>
+									<?= ModuleComposer::getAdds(ModuleComposer::NAV_BAR_ADDS); ?>
 								</ul>
 								<ul class="nav pull-right">
 									<li class="dropdown">
@@ -81,6 +82,7 @@
 						<?php if (Auth::is('Admin')): ?>
 						<li <?= $active === 'user' ? 'class="active"' : ''  ?>><a href="~/admin/user/">Usuários</a></li>
 						<?php endif; ?>
+						<?= ModuleComposer::getAdds(ModuleComposer::SIDE_MENU_ADDS); ?>
 					</ul>
 				</div>
 				<div class="span9">
