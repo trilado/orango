@@ -3,7 +3,7 @@
 class ModuleController extends AppController
 {
 	/**
-	 * @Master("empty")
+	 * @Master("admin")
 	 */
 	public function __contruct()
 	{
