@@ -3,7 +3,7 @@
 class ModuleComposer
 {
 	const POST_ADDS 		= 'POST_ADDS';
-	const PAGE_ADS			= 'PAGE_ADDS';
+	const PAGE_ADDS			= 'PAGE_ADDS';
 	const CATEGORY_ADDS		= 'CATEGORY_ADDS';
 	const USER_ADDS			= 'USER_ADDS';
 	const SIDE_MENU_ADDS	= 'SIDE_MENU_ADDS';
