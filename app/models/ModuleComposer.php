@@ -37,6 +37,8 @@ class ModuleComposer
 				$params = '';
 				if(isset($clazz::$adds['params']))
 				{
+
+					$clazz::$adds['params'] = array_merge(App::$args['params'], $clazz::$adds['params']);
 					$params = implode('/', $clazz::$adds['params']);
 				}
 
