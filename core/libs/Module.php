@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2012-2013, Jackson Gomes <jackson.souza@gmail.com>
+ * Copyright (c) Trilado Team (triladophp.org)
  * All rights reserved.
  */
 
@@ -8,6 +8,7 @@
  * 
  * @author	Jackson Gomes <jackson.souza@gmail.com>
  * @author	Valdirene da Cruz Neves Júnior <vaneves@vaneves.com>
+ * @author	Diego Oliveira <diegopso2@gmail.com>
  * @version	0.2
  */
 class Module
@@ -27,7 +28,7 @@ class Module
 	 */
 	public static function add($name, $path)
 	{
-		self::$collection[strtolower($name)] = $path;
+		self::$collection[$name] = $path;
 	}
 
 	/**
@@ -37,7 +38,7 @@ class Module
 	 */
 	public static function remove($name)
 	{
-		unset(self::$collection[strtolower($name)]);
+		unset(self::$collection[$name]);
 	}
 
 	/**
@@ -48,7 +49,7 @@ class Module
 	 */
 	public static function exists($name)
 	{
-		return isset(self::$collection[strtolower($name)]);
+		return isset(self::$collection[$name]);
 	}
 
 	/**
@@ -60,7 +61,14 @@ class Module
 		foreach (self::$collection as $m)
 		{
 			if (file_exists($m . 'init.php'))
+			{
+				Import::register($m . 'controllers/');
+				Import::register($m . 'models/');
+				Import::register($m . 'vendors/');
+				Import::register($m . 'helpers/');
+
 				require_once $m . 'init.php';
+			}
 		}
 	}
 	
@@ -74,5 +82,14 @@ class Module
 	{
 		if(isset(self::$collection[$name]))
 			return trim(self::$collection[$name], '/') . '/';
+	}
+
+	public static function run($url)
+	{
+		ob_start();
+
+		new App($url);
+
+		return ob_get_clean();
 	}
 }

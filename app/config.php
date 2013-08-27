@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2011-2013, Valdirene da Cruz Neves Júnior <linkinsystem666@gmail.com>
+ * Copyright (c) Trilado Team (triladophp.org)
  * All rights reserved.
  */
 
@@ -119,14 +119,17 @@ Config::set('cache', array(
  * Registrar diretórios de arquivos de código fonte, para autoload 
  */
 Config::set('directories', array(
-	'app/vendors',
+	'controller' 	=> App::$root . 'app/controllers',
+	'model' 		=> App::$root . 'app/models',
+	'helper' 		=> App::$root . 'app/helpers',
+	'vendor' 		=> App::$root . 'app/vendors',
 ));
 
 /**
  * Registrar diretórios de arquivos de código fonte, para autoload 
  */
 Config::set('modules', array(
-	'example' => 'app/modules/example/',
+	//'example' 		=> App::$root . 'app/modules/example/',
 ));
 
 Config::set('html_safe_list', '<a><address><em><strong><b><i><big><small><sub><sup><cite><code><img><ul><ol><li><dl><lh><dt><dd><br><p><table><th><td><tr><pre><blockquote><nowiki><h1><h2><h3><h4><h5><h6><hr>');
