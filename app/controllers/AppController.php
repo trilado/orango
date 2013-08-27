@@ -13,7 +13,7 @@ class AppController extends Controller
 		}
 		else
 		{
-			$this->Template->setDirectory(App::ROOT . 'app/views/theme/' . Config::get('theme') . '/');
+			$this->Template->setDirectory(App::$root . 'app/views/theme/' . Config::get('theme') . '/');
 			$this->_set('categories', Category::findAll());
 			$this->_set('pages', Post::allPages(true));
 		}
