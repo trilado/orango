@@ -23,6 +23,7 @@
 			</div>
 		</div>
 	</div>
+	<?= ModuleComposer::getAdds(ModuleComposer::POST_ADDS); ?>
 	<?= BForm::textarea('Conteúdo', 'Content', $model->Content, 'input-block-level ckeditor') ?>
 	<?php if ($label == 'Criar' || $model->Status === 0): ?>
 		<button type="submit" class="btn btn-inverse">Publicar</button>
