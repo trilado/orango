@@ -29,6 +29,12 @@ class PageController extends AppController
 				$page->UserId = Session::get('user')->Id;
 				$page->CreatedDate = time();
 				$page->Type = 'page';
+
+				$file = Request::file('Image');
+				if($file['name'])
+				{
+					$page->saveImage($file['tmp_name']);
+				}
 				
 				if($page->Status)
 					$page->PublicationDate = time();
@@ -68,6 +74,13 @@ class PageController extends AppController
 				$page = $this->_data($page);
 				$page->Content = strip_tags(Request::post('Content'), Config::get('html_safe_list'));
 				$page->Status = Request::post('Draft') ? 0 : 1;
+
+				$file = Request::file('Image');
+				if($file['name'])
+				{
+					$page->saveImage($file['tmp_name']);
+				}
+				
 				$page->save();
 				$this->_flash('alert alert-success', 'Página salva com sucesso.');
 			} 

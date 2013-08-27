@@ -1,6 +1,6 @@
 <h1>Categorias <small><?= $label ?></small> </h1>
 <div class="row-fluid">
-	<form id="form-category" class="form-vertical" method="POST" action="">
+	<form id="form-category" class="form-vertical" method="POST" action="" enctype='multipart/form-data'>
 		<div class="row-fluid">
 			<div class="control-group span6">
 				<label class="control-label" for="Name">Nome</label>

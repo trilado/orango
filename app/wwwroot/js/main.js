@@ -30,7 +30,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('#post-form #Image').click(function(){
+	$('#post-form #Image, #form-page #Image').click(function(){
 		$(this).parent().find('input[type="file"]').click();
 	});
 	
