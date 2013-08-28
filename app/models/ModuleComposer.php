@@ -49,8 +49,11 @@ class ModuleComposer
 						$query .= '&' . $k . '=' . $q;
 					}
 				}
-				
-				$html .= Module::run('/' . $k . '/' . $controller . '/' . $action . '/' . $params . $query);
+
+				if($addType === self::SIDE_MENU_ADDS || $addType === self::NAV_BAR_ADDS) // se forem alteracoes na masterpage
+					$html .= Request::create(Request::getSite() . $k . '/' . $controller . '/' . $action . '/' . $params . $query);
+				else
+					$html .= Module::run('/' . $k . '/' . $controller . '/' . $action . '/' . $params . $query);
 			}
 		}
 
