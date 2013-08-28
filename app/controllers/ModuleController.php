@@ -2,6 +2,11 @@
 
 class ModuleController extends AppController
 {
+	public function __construct()
+	{
+		$this->_set('active', '');
+	}
+	
 	/**
 	 * @Master("admin")
 	 */
