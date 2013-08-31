@@ -73,15 +73,13 @@ class Post extends Model
 
 	public function saveImage($path)
 	{
-		$canvas = new canvas();
-		$canvas->carrega($path);
+		$content = file_get_contents($path);
 
 		$config = Config::get('image');
 		extract($config);
 		$this->Img = $path . md5(uniqid()) . '.png';
 
-		$canvas->redimensiona($w, $h, 'crop');
-		$canvas->grava(WWWROOT . $this->Img);
+		file_put_contents(WWWROOT . $this->Img, $content);
 	}
 	
 	/**
@@ -135,11 +133,14 @@ class Post extends Model
 	{
 		$db = Database::factory();
 		$postCategories = $db->PostCategory;
-		foreach ($categories as $c)
+		if($categories)
 		{
-			$postCategories->insert(new PostCategory($this->Id, $c));
+			foreach ($categories as $c)
+			{
+				$postCategories->insert(new PostCategory($this->Id, $c));
+			}
+			$db->save();
 		}
-		$db->save();
 	}
 	
 	public function unsetCategories()

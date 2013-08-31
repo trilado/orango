@@ -140,7 +140,5 @@ Config::set('site_name', 'Orango CMS');
 Config::set('theme', 'default');
 
 Config::set('image', array(
-	'w' => 150,
-	'h' => 150,
 	'path' => 'media/'
 ));
