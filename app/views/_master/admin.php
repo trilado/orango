@@ -13,6 +13,8 @@
 		<link href="~/css/style.css" rel="stylesheet">
 		
 		<link rel="shortcut icon" href="~/img/favicon.png">
+
+		<?= ModuleComposer::getAdds(ModuleComposer::ADMIN_HEAD_ADDS); ?>
 	</head>
 
 	<body>
@@ -106,5 +108,6 @@
 		<script src="~/js/chosen.jquery.min.js"></script>
 		<script src="~/js/ckeditor/ckeditor.js"></script>
 		<script src="~/js/main.js"></script>
+		<?= ModuleComposer::getAdds(ModuleComposer::ADMIN_BODY_ADDS); ?>
 	</body>
 </html>

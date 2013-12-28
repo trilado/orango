@@ -8,6 +8,16 @@ class ModuleComposer
 	const USER_ADDS			= 'USER_ADDS';
 	const SIDE_MENU_ADDS	= 'SIDE_MENU_ADDS';
 	const NAV_BAR_ADDS		= 'NAV_BAR_ADDS';
+	const ADMIN_BODY_ADDS	= 'ADMIN_BODY_ADDS';
+	const ADMIN_HEAD_ADDS	= 'ADMIN_HEAD_ADDS';
+
+	// se forem alteracoes na masterpage
+	private static $_requireRequestAdds = array(
+		self::SIDE_MENU_ADDS,
+		self::NAV_BAR_ADDS,
+		self::ADMIN_BODY_ADDS,
+		self::ADMIN_HEAD_ADDS,
+	);
 
 	public static function getAdds($addType)
 	{
@@ -50,7 +60,7 @@ class ModuleComposer
 					}
 				}
 
-				if($addType === self::SIDE_MENU_ADDS || $addType === self::NAV_BAR_ADDS) // se forem alteracoes na masterpage
+				if(in_array($addType, self::$_requireRequestAdds))
 					$html .= Request::create(Request::getSite() . $k . '/' . $controller . '/' . $action . '/' . $params . $query);
 				else
 					$html .= Module::run('/' . $k . '/' . $controller . '/' . $action . '/' . $params . $query);
