@@ -14,6 +14,7 @@
 		
 		<link rel="shortcut icon" href="~/img/favicon.png">
 
+		<script type="text/javascript" src="~/js/setup.js"></script>
 		<?= ModuleComposer::getAdds(ModuleComposer::ADMIN_HEAD_ADDS); ?>
 	</head>
 
@@ -102,12 +103,13 @@
 				<p class="muted">Orango CMS - Feito com <a href="http://triladophp.org">Trilado Framework</a>.</p>
 			</div>
 		</div>
-		<script src="~/js/jquery.min.js"></script>
-		<script src="~/js/bootstrap.min.js"></script>
-		<script src="~/js/jquery.validate.min.js"></script>
-		<script src="~/js/chosen.jquery.min.js"></script>
-		<script src="~/js/ckeditor/ckeditor.js"></script>
-		<script src="~/js/main.js"></script>
+		<script type="text/javascript" src="~/js/jquery.min.js"></script>
+		<script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="~/js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="~/js/chosen.jquery.min.js"></script>
+		<script type="text/javascript" src="~/js/ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="~/js/ckeditor/adapters/jquery.js"></script>
+		<script type="text/javascript" src="~/js/main.js"></script>
 		<?= ModuleComposer::getAdds(ModuleComposer::ADMIN_BODY_ADDS); ?>
 	</body>
 </html>

@@ -8,6 +8,14 @@ $(document).ready(function(){
 			confirm.hide('fast');
 		});
 	});
+
+	$('.ckeditor-post').ckeditor({
+		toolbar: 'Post'
+	});
+
+	$('.ckeditor-page').ckeditor({
+		toolbar: 'Page'
+	});
 	
 	$('select[data-toggle="chosen-multiple"]').chosen();
 	
