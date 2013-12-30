@@ -133,7 +133,7 @@ Config::set('modules', array(
 	//'Example'		=> App::$root . 'app/modules/example/',
 ));
 
-Config::set('html_safe_list', '<a><address><em><strong><b><i><big><small><sub><sup><cite><code><img><ul><ol><li><dl><lh><dt><dd><br><p><table><th><td><tr><pre><blockquote><nowiki><h1><h2><h3><h4><h5><h6><hr>');
+Config::set('html_safe_list', '<a><span><address><em><strong><b><i><big><small><sub><sup><cite><code><img><ul><ol><li><dl><lh><dt><dd><br><p><table><th><td><tr><pre><blockquote><nowiki><h1><h2><h3><h4><h5><h6><hr>');
 
 Config::set('site_name', 'Orango CMS');
 

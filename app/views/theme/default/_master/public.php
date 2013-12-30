@@ -8,6 +8,7 @@
 		<link href="~/css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="~/css/style.css" rel="stylesheet">
 		<link rel="shortcut icon" href="~/img/favicon.png">
+		<?= ModuleComposer::getAdds(ModuleComposer::PUBLIC_HEAD_ADDS); ?>
 	</head>
 	<body>
 		<?= Import::view(array('pages' => $pages), '_master', 'navbar') ?>
@@ -27,5 +28,6 @@
 		</div>
 		<script src="~/js/jquery.min.js"></script>
 		<script src="~/js/bootstrap.min.js"></script>
+		<?= ModuleComposer::getAdds(ModuleComposer::PUBLIC_BODY_ADDS); ?>
 	</body>
 </html>

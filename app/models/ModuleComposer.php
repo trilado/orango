@@ -10,6 +10,8 @@ class ModuleComposer
 	const NAV_BAR_ADDS		= 'NAV_BAR_ADDS';
 	const ADMIN_BODY_ADDS	= 'ADMIN_BODY_ADDS';
 	const ADMIN_HEAD_ADDS	= 'ADMIN_HEAD_ADDS';
+	const PUBLIC_BODY_ADDS	= 'PUBLIC_BODY_ADDS';
+	const PUBLIC_HEAD_ADDS	= 'PUBLIC_HEAD_ADDS';
 
 	// se forem alteracoes na masterpage
 	private static $_requireRequestAdds = array(
@@ -17,6 +19,8 @@ class ModuleComposer
 		self::NAV_BAR_ADDS,
 		self::ADMIN_BODY_ADDS,
 		self::ADMIN_HEAD_ADDS,
+		self::PUBLIC_BODY_ADDS,
+		self::PUBLIC_HEAD_ADDS,
 	);
 
 	public static function getAdds($addType)
