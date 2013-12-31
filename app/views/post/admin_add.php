@@ -23,6 +23,9 @@
 			</div>
 		</div>
 	</div>
+	<div id="OriginalContent" class="hide">
+		<?= $model->Content ?>
+	</div>
 	<?= ModuleComposer::getAdds(ModuleComposer::POST_ADDS); ?>
 	<?= BForm::textarea('Conteúdo', 'Content', $model->Content, 'input-block-level ckeditor-post') ?>
 	<?php if ($label == 'Criar' || $model->Status === 0): ?>
